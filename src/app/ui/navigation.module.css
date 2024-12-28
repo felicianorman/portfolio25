@@ -10,6 +10,7 @@
     display: flex;
     justify-content: space-around;
     list-style-type: none;
+    
 }
 
 .navList li a {
@@ -18,5 +19,39 @@
     font-family: var(--font-poppins), sans-serif;
     font-size: 1.2em;
     font-weight: 600;
-
+      display: inline-block;
+    position: relative;
+     transition: color 0.3s ease;
 }
+
+.navList li a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -1px;
+    left: 50%;
+    background-color: #8f5883;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navList li a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+
+.navList li a:hover::after {
+right:0;
+}
+
+/* .navList li a:after {
+  border-radius: 1em;
+  border-top: .12em solid #8f5883;
+ content: "";
+  position: absolute;
+    right: 100%;
+    bottom: .14em;
+    left: 0;
+  transition: right .2s cubic-bezier(0,.5,0,1);
+} */
