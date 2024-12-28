@@ -1,5 +1,6 @@
 import styles from "@/app/ui/home.module.css";
 import { MuseoModerno } from "next/font/google";
+import About from "./pages/about";
 import Navigation from "./ui/navigation";
 
 const museoModerno = MuseoModerno({
@@ -38,7 +39,7 @@ export default function Home() {
                   </svg>
               </div>
           </div>
+          <About />
       </main>
   );
 }
-/* https://codepen.io/elfick/pen/rQYEjg*/
