@@ -1,14 +1,6 @@
 import styles from "@/app/ui/home.module.css";
-import { MuseoModerno, Poppins } from "next/font/google";
-import Image from "next/image";
+import { MuseoModerno } from "next/font/google";
 import Navigation from "./ui/navigation";
-
-
-const poppins = Poppins({
-    variable: "--font-poppins",
-    subsets: ["latin"],
-    weight: ["300", "400"],
-});
 
 const museoModerno = MuseoModerno({
     variable: "--font-museo-moderno",
