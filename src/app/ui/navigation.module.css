@@ -1,0 +1,22 @@
+.nav {
+    display: flex;
+    justify-content: center;
+}
+
+.navList {
+  width: 50%;
+    margin: 0;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+.navList li a {
+    text-decoration: none;
+    color: #8f5883;
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+
+}
