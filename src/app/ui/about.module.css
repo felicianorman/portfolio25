@@ -18,12 +18,14 @@
     height: 50vh;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .aboutText p,
 .workText p {
     font-size: 1.2em;
+    color: #624155;
+    width: 600px;
 }
 
 .title {
@@ -31,4 +33,7 @@
     font-family: var(--font-museo-moderno), sans-serif;
     padding: 0;
     margin: 0;
+    color: #624155;
 }
+
+

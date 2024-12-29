@@ -23,15 +23,20 @@ export default function About({ className }: AboutProps) {
         <section className={clsx(styles.about, poppins.variable, className)}>
             <article className={styles.aboutText}>
                 <h2 className={`${styles.title} ${museoModerno.variable}`}>about</h2>
-                <p>I&apos;m a Frontend Developer based in Stockholm, Sweden, with a passion for creating beautiful and seamless user experiences.
-                    <br></br><br></br>
-                    My creative interests include painting, knitting and writing - which led me to a career in web development. 
+                <p>
+                    I&apos;m a Frontend Developer based in Stockholm, Sweden, with a passion for
+                    creating beautiful and seamless user experiences.
+                    <br></br>
+                    <br></br>
+                    My creative interests include painting, knitting and writing - which led me to a
+                    career in web development.
                 </p>
             </article>
             <article className={styles.workText}>
                 <h2 className={`${styles.title} ${museoModerno.variable}`}>experience</h2>
                 <p>
-                    I am currently working as a System Developer at iquest.
+                    In my role as a System Developer at iquest, I contribute to the creation and
+                    optimization of the frontend of our core products.
                 </p>
             </article>
         </section>

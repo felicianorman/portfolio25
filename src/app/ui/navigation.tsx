@@ -1,5 +1,6 @@
 import styles from "@/app/ui/navigation.module.css";
 import { Poppins } from "next/font/google";
+import Link from "next/link";
 
 const poppins = Poppins({
     variable: "--font-poppins",
@@ -12,16 +13,16 @@ export default function Navigation() {
         <nav className={styles.nav}>
             <ul className={`${styles.navList} ${poppins.variable}`}>
                 <li>
-                    <a href="/">Home</a>
+                    <Link href="/#1">Home</Link>
                 </li>
                 <li>
-                    <a href="/">About</a>
+                    <Link href="/#2">About</Link>
                 </li>
                 <li>
-                    <a href="/">Projects</a>
+                    <Link href="/">Projects</Link>
                 </li>
                 <li>
-                    <a href="/">Contact</a>
+                    <Link href="/">Contact</Link>
                 </li>
             </ul>
         </nav>
