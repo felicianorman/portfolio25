@@ -1,17 +1,12 @@
 .main {
     height: 100vh;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
 
     .mainText {
-        position: relative;
         height: inherit;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        scroll-snap-align: start;
-        overflow: hidden;
     }
 
     .svgContainer {
@@ -29,7 +24,6 @@
 .about {
     scroll-snap-align: start;
     height: 100vh;
-    border: 1px solid red;
 }
 
 .title {

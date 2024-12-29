@@ -1,7 +1,13 @@
+"use client";
+
 import styles from "@/app/ui/home.module.css";
+import $ from "jquery";
+import scrollify from "jquery-scrollify";
 import { MuseoModerno } from "next/font/google";
+import { useEffect } from "react";
 import About from "./pages/about";
 import Navigation from "./ui/navigation";
+
 
 const museoModerno = MuseoModerno({
     variable: "--font-museo-moderno",
@@ -10,10 +16,34 @@ const museoModerno = MuseoModerno({
 });
 
 export default function Home() {
+    useEffect(() => { 
+        $(function () {
+            scrollify({
+                section: ".section",
+                sectionName: "section-name",
+                interstitialSection: "",
+                easing: "easeOutExpo",
+                scrollSpeed: 1100,
+                offset: 0,
+                scrollbars: true,
+                standardScrollElements: "",
+                setHeights: true,
+                overflowScroll: true,
+                updateHash: true,
+                touchScroll: true,
+                before: function () {},
+                after: function () {},
+                afterResize: function () {},
+                afterRender: function () {}
+            })
+        })
+
+        
+    });
   return (
       <main className={styles.main}>
           <Navigation />
-          <div className={styles.mainText}>
+          <div className={`${styles.mainText} section`}>
               <h1 className={`${styles.title} ${museoModerno.variable}`}>
                   Hi! I&apos;m Felicia Norman. <br></br>
               </h1>
@@ -39,7 +69,7 @@ export default function Home() {
                   </svg>
               </div>
           </div>
-          <About className={styles.about} />
+          <About className={`${styles.about} section`} />
       </main>
   );
 }
