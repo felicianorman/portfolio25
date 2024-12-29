@@ -1,4 +1,5 @@
 import styles from "@/app/ui/about.module.css";
+import clsx from "clsx";
 import { MuseoModerno, Poppins } from "next/font/google";
 
 const poppins = Poppins({
@@ -13,14 +14,16 @@ const museoModerno = MuseoModerno({
     weight: ["400", "500"],
 });
 
-export default function About() {
+interface AboutProps {
+    className?: string;
+}
+
+export default function About({ className }: AboutProps) {
     return (
-        <section className={`${styles.about} ${poppins.variable}`}>
+        <section className={clsx(styles.about, poppins.variable, className)}>
             <article className={styles.aboutText}>
                 <h2 className={`${styles.title} ${museoModerno.variable}`}>About</h2>
-                <p>
-                    Frontend Developer based in Stockholm.
-                </p>
+                <p>Frontend Developer based in Stockholm.</p>
             </article>
             <article className={styles.workText}>
                 <h2 className={`${styles.title} ${museoModerno.variable}`}>Experience</h2>

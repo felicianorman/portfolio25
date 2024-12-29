@@ -1,5 +1,4 @@
 .about {
-    height: 100vh;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -10,6 +9,7 @@
 
 .aboutText {
     width: 40%;
+    height: 50vh;
     border: 1px solid red;
 }
 

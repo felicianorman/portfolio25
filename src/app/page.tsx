@@ -39,7 +39,7 @@ export default function Home() {
                   </svg>
               </div>
           </div>
-          <About />
+          <About className={styles.about} />
       </main>
   );
 }
