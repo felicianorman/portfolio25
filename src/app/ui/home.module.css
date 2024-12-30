@@ -16,21 +16,6 @@
            font-size: 4em;
         }
     }
-
-    .svgContainer {
-        position: relative;
-
-          @media screen and (max-width: 1080px) {
-              display: none;
-        }
-    }
-
-    .svg {
-        position: absolute;
-        top: 300px;
-        width: 48px;
-        height: 48px;
-    }
 }
 
 .about {
