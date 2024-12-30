@@ -4,6 +4,7 @@
     align-items: center;
     font-family: var(--font-poppins), sans-serif;
     color: white;
+    height: 100vh;
 
        @media screen and (max-width: 1080px) {
               flex-direction: column;

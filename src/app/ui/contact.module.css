@@ -1,11 +1,23 @@
 .contact {
-border: 1px solid red;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-items: center;
 }
 
 .error {
     color: red;
     font-size: 12px;
     margin-top: 5px;
+}
+
+.contactTitle {
+    font-family: var(--font-museo-moderno), sans-serif;
+    font-size: 2rem;
+    color: #624155;
+}
+
+.contactForm {
+border: 1px solid red;
 }

@@ -1,6 +1,6 @@
 import styles from "@/app/ui/contact.module.css";
 import clsx from "clsx";
-import { MuseoModerno } from "next/font/google";
+import { MuseoModerno, Poppins } from "next/font/google";
 import { useForm } from "react-hook-form";
 import { sendEmail } from "../lib/sendEmail";
 
@@ -15,6 +15,13 @@ const museoModerno = MuseoModerno({
     subsets: ["latin"],
     weight: ["400", "500"],
 });
+
+const poppins = Poppins({
+    variable: "--font-poppins",
+    subsets: ["latin"],
+    weight: ["500", "600"],
+});
+
 
 interface ContactProps {
     className?: string;
@@ -31,8 +38,8 @@ export default function Contact({ className }: ContactProps) {
 
     return (
         <section className={clsx(styles.contact, className)}>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <h2 className={`${museoModerno.variable}`}>contact</h2>
+            <form onSubmit={handleSubmit(onSubmit)} className={`${poppins.variable} ${styles.contactForm}`}>
+                <h2 className={`${museoModerno.variable} ${styles.contactTitle}`}>contact</h2>
                 <div>
                     <label htmlFor="name">Name</label>
                     <input
