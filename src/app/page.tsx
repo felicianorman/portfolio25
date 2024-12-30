@@ -6,6 +6,8 @@ import scrollify from "jquery-scrollify";
 import { MuseoModerno } from "next/font/google";
 import { useEffect } from "react";
 import About from "./pages/about";
+import Contact from "./pages/contact";
+import Projects from "./pages/projects";
 import Navigation from "./ui/navigation";
 
 
@@ -58,6 +60,8 @@ export default function Home() {
               </div>
           </div>
           <About className={`${styles.about} section`} />
+          <Projects className={`${styles.projects} section`} />
+          <Contact className={`${styles.contact} section`} />
       </main>
   );
 }
