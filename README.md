@@ -5,3 +5,5 @@ My portfolio is built with React and Next.js, with CSS modules for styling.
 - scrollify.js
 - jquery
 - clsx
+- react-hook-form
+- nodemailer
