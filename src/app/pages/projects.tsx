@@ -1,9 +1,9 @@
-import styles from '@/app/ui/projects.module.css';
+import styles from "@/app/ui/projects.module.css";
 import clsx from "clsx";
 import { MuseoModerno, Poppins } from "next/font/google";
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { fetchRepos } from '../lib/api';
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { fetchRepos } from "../lib/api";
 // import { fetchRepos } from '../lib/api';
 
 const museoModerno = MuseoModerno({
@@ -23,21 +23,21 @@ interface ProjectsProps {
 }
 
 const projectImages = {
-    gyncancersite: "/godis.17678711.png",
-    memorygame: "/memorygame.46ed5878.png",
-    "ToDo-List": "/godis.17678711.png",
-    "Weather-App": "/godis.17678711.png",
+    gyncancersite: "/gyncancerse.png",
+    memorygame: "/memory.png",
+    "Weather-App": "/weather.png"
 };
 
 export default function Projects({ className }: ProjectsProps) {
-    const [repos, setRepos] = useState<Array<{ id: number; html_url: string; name: string; description?: string }>>([]);
+    const [repos, setRepos] = useState<
+        Array<{ id: number; html_url: string; name: string; description?: string }>
+    >([]);
 
-    
     useEffect(() => {
         async function loadRepos() {
             try {
                 const data = await fetchRepos();
-                console.log(data, 'data');
+                console.log(data, "data");
                 setRepos(data);
             } catch (error) {
                 console.error("Error fetching repositories:", error);
@@ -54,9 +54,7 @@ export default function Projects({ className }: ProjectsProps) {
             <div className={styles.projectList}>
                 {filteredRepos.length > 0 ? (
                     filteredRepos.map((repo) => {
-                        const imageUrl =
-                            projectImages[repo.name as keyof typeof projectImages];
-
+                        const imageUrl = projectImages[repo.name as keyof typeof projectImages];
 
                         return (
                             <article
@@ -67,14 +65,23 @@ export default function Projects({ className }: ProjectsProps) {
                                     src={imageUrl}
                                     alt={repo.name}
                                     width={300} // Adjust width and height as needed
-                                    height={300}
+                                    height={240}
                                     className={styles.projectImage}
                                 />
-                                <h3>{repo.name}</h3>
-                                {repo.description && <p>{repo.description}</p>}
-                                <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                                    View Project
-                                </a>
+                                <div className={styles.projectText}>
+                                    <h3 className={`${museoModerno.variable}`}>{repo.name}</h3>
+                                    {repo.description && <p>{repo.description}</p>}
+                                    <div className={styles.link}>
+                                        <a
+                                            className={`${museoModerno.variable}`}
+                                            href={repo.html_url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            View Project
+                                        </a>
+                                    </div>
+                                </div>
                             </article>
                         );
                     })

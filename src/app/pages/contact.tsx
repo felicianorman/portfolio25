@@ -13,7 +13,7 @@ interface ContactProps {
 }
 
 export default function Contact({ className }: ContactProps) {
-    return (<section className={clsx(styles.about, className)}>
+    return (<section className={clsx(styles.contact, className)}>
         <h2 className={`${museoModerno.variable}`}>contact</h2>
     </section>)
 }
