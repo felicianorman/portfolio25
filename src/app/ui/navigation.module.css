@@ -12,6 +12,11 @@
     display: flex;
     justify-content: space-around;
     list-style-type: none;
+
+     @media screen and (max-width: 1080px) {
+          width: 100%;
+
+        }
     
 }
 

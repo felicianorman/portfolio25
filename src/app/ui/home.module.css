@@ -7,10 +7,22 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+      
+    }
+
+    .mainText h1 {
+          @media screen and (max-width: 1080px) {
+           text-align: center;
+           font-size: 4em;
+        }
     }
 
     .svgContainer {
         position: relative;
+
+          @media screen and (max-width: 1080px) {
+              display: none;
+        }
     }
 
     .svg {
@@ -45,6 +57,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+         @media screen and (max-width: 1080px) {
+           font-size: 3em !important; 
+        }
 }
 
 .words .subTitle {
