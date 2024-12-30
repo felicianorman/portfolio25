@@ -21,32 +21,42 @@ interface ContactProps {
 }
 
 export default function Contact({ className }: ContactProps) {
-    const { register, handleSubmit } = useForm<FormData>();
+    const { register, handleSubmit, 
+        formState: { errors }
+     } = useForm<FormData>();
 
     function onSubmit(data: FormData) {
         sendEmail(data);
     }
 
     return (
-        <form className={clsx(styles.contact, className)} onSubmit={handleSubmit(onSubmit)}>
-            <h2 className={`${museoModerno.variable}`}>contact</h2>
-            <div>
-                <label htmlFor="name">Name</label>
-                <input id="name" type="text" {...register("name", { required: true })} />
-            </div>
+        <section className={clsx(styles.contact, className)}>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <h2 className={`${museoModerno.variable}`}>contact</h2>
+                <div>
+                    <label htmlFor="name">Name</label>
+                    <input
+                        id="name"
+                        type="text"
+                        {...register("name", { required: "Name is required" })}
+                    />
+                    {errors.name && <span className={styles.error}>{errors.name.message}</span>}{" "}
+                    {/* Display error */}
+                </div>
 
-            <div>
-                <label htmlFor="email">Email</label>
-                <input id="email" type="email" {...register("email", { required: true })} />
-            </div>
+                <div>
+                    <label htmlFor="email">Email</label>
+                    <input id="email" type="email" {...register("email", { required: true })} />
+                </div>
 
-            <div>
-                <label htmlFor="message">Message</label>
-                <textarea id="message" {...register("message", { required: true })} />
-            </div>
-            <div>
-                <button type="submit">Submit</button>
-            </div>
-        </form>
+                <div>
+                    <label htmlFor="message">Message</label>
+                    <textarea id="message" {...register("message", { required: true })} />
+                </div>
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </section>
     );
 }

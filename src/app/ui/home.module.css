@@ -1,5 +1,5 @@
 .main {
-    height: 100vh;
+    height: 100vh;;
 
     .mainText {
         height: inherit;
@@ -7,7 +7,6 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-      
     }
 
     .mainText h1 {
@@ -18,14 +17,8 @@
     }
 }
 
-.about {
-    scroll-snap-align: start;
-    height: 100vh;
-}
-
-.projects, .contact {
-    scroll-snap-align: start;
-    height: 100vh;
+.projects, .contact, .about {
+    height: auto;
 }
 
 .title {

@@ -3,3 +3,9 @@ border: 1px solid red;
     display: flex;
     flex-direction: column;
 }
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
