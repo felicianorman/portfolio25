@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { MuseoModerno, Poppins } from "next/font/google";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { fetchRepos } from "../lib/api";
+import { fetchRepos, Repository } from "../lib/api";
 // import { fetchRepos } from '../lib/api';
 
 const museoModerno = MuseoModerno({
@@ -25,18 +25,17 @@ interface ProjectsProps {
 const projectImages = {
     gyncancersite: "/gyncancerse.png",
     memorygame: "/memory.png",
+    "portfolio25": "/portfolio.png",
     "Weather-App": "/weather.png"
 };
 
 export default function Projects({ className }: ProjectsProps) {
-    const [repos, setRepos] = useState<
-        Array<{ id: number; html_url: string; name: string; description?: string }>
-    >([]);
+    const [repos, setRepos] = useState<Repository[]>([]);
 
     useEffect(() => {
         async function loadRepos() {
             try {
-                const data = await fetchRepos();
+                const data: Repository[] = await fetchRepos();
                 console.log(data, "data");
                 setRepos(data);
             } catch (error) {
@@ -80,6 +79,17 @@ export default function Projects({ className }: ProjectsProps) {
                                         >
                                             View Project
                                         </a>
+                                    </div>
+                                    <div className={styles.tags}>
+                                        {repo.topics && repo.topics.length > 0 ? (
+                                            repo.topics.map((topic) => (
+                                                <span key={topic} className={styles.tag}>
+                                                    {`${topic} `}
+                                                </span>
+                                            ))
+                                        ) : (
+                                            <span className={styles.noTags}>No tags available</span>
+                                        )}
                                     </div>
                                 </div>
                             </article>
