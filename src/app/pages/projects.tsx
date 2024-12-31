@@ -63,7 +63,7 @@ export default function Projects({ className }: ProjectsProps) {
                                 <Image
                                     src={imageUrl}
                                     alt={repo.name}
-                                    width={300} // Adjust width and height as needed
+                                    width={300} 
                                     height={240}
                                     className={styles.projectImage}
                                 />
@@ -96,7 +96,7 @@ export default function Projects({ className }: ProjectsProps) {
                         );
                     })
                 ) : (
-                    <p>No projects with descriptions available.</p>
+                    <p>No projects available.</p>
                 )}
             </div>
         </section>

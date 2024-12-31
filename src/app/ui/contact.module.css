@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-items: center;
+    width: 100%;
 }
 
 .error {
@@ -12,12 +13,80 @@
     margin-top: 5px;
 }
 
-.contactTitle {
+.titles { 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.titles h2 {
     font-family: var(--font-museo-moderno), sans-serif;
-    font-size: 2rem;
+    font-size: 4rem;
     color: #624155;
+    margin: 0;
+}
+
+.titles h3 {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 1.2rem;
+    color: #624155;
+    margin: 0;
 }
 
 .contactForm {
-border: 1px solid red;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.contactFormFields label {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 1.2rem;
+    color: #624155;
+    margin-top: 5px;
+}
+
+.contactFormFields {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.contactFormFields input, .contactFormFields textarea {
+    width: 300px;
+    height: 2.5rem;
+    margin-top: 5px;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+}
+
+.contactFormBtn {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+.contactFormBtn button {
+    width: 300px;
+    height: 2.5rem;
+    margin-top: 5px;
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 1em;
+    background-color: #624155;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
