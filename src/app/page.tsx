@@ -46,7 +46,7 @@ export default function Home() {
   return (
       <main className={styles.main}>
           <Navigation />
-          <div className={`${styles.mainText} section`}>
+          <div className={`${styles.mainText} section`} data-section-name="1">
               <h1 className={`${styles.title} ${museoModerno.variable}`}>
                   Hi! I&apos;m Felicia Norman. <br></br>
               </h1>
@@ -60,9 +60,9 @@ export default function Home() {
                   </h1>
               </div>
           </div>
-          <About className={`${styles.about} section`} />
-          <Projects className={`${styles.projects} section`} />
-          <Contact className={`${styles.contact} section`} />
+          <About className={`${styles.about} section`} data-section-name="2" />
+          <Projects className={`${styles.projects} section`} data-section-name="3" />
+          <Contact className={`${styles.contact} section`} data-section-name="4" />
       </main>
   );
 }

@@ -114,7 +114,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     list-style-type: none;
 }
 
@@ -123,6 +123,10 @@
     height: 50px;
     cursor: pointer;
     fill: #624155
+}
+
+.svg:hover, .contactFormBtn button:hover {
+    transform: scale(1.1);
 }
 
 .footerText {

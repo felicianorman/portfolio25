@@ -82,17 +82,20 @@ export default function Contact({ className }: ContactProps) {
                             href="https://www.linkedin.com/in/felicia-norman-1b8a15152/"
                             target="_blank"
                             rel="noreferrer"
+                            title="LinkedIn"
                         >
                             <AiFillLinkedin className={styles.svg} />
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/felicianorman" target="_blank" rel="noreferrer">
+                        <a href="https://github.com/felicianorman" target="_blank" rel="noreferrer"
+                        title="GitHub">
                             <AiFillGithub className={styles.svg} />
                         </a>
                     </li>
                     <li>
-                        <a href="mailto:felicianylandernorman@gmail.com" target="_blank" rel="noreferrer">
+                        <a href="mailto:felicianylandernorman@gmail.com" target="_blank" rel="noreferrer"
+                        title="Email">
                             <AiFillMail className={styles.svg} />
                         </a>
                     </li>
