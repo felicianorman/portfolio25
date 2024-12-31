@@ -2,6 +2,7 @@ import styles from "@/app/ui/contact.module.css";
 import clsx from "clsx";
 import { MuseoModerno, Poppins } from "next/font/google";
 import { useForm } from "react-hook-form";
+import { AiFillGithub, AiFillLinkedin, AiFillMail } from "react-icons/ai";
 import { sendEmail } from "../lib/sendEmail";
 
 export type FormData = {
@@ -45,7 +46,7 @@ export default function Contact({ className }: ContactProps) {
                 <div className={`${styles.titles}`}>
                     <h2 className={museoModerno.variable}>send me a message</h2>
                     <h3>
-                        Contact me for any questions or inquiries. I will get back to you as soon as
+                        Contact me for any questions or inquiries. <br></br>I will get back to you as soon as
                         possible. 👋
                     </h3>
                 </div>
@@ -73,6 +74,33 @@ export default function Contact({ className }: ContactProps) {
                     <button type="submit">Submit</button>
                 </div>
             </form>
+
+            <footer className={styles.footer}>
+                <ul>
+                    <li>
+                        <a
+                            href="https://www.linkedin.com/in/felicia-norman-1b8a15152/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <AiFillLinkedin className={styles.svg} />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/felicianorman" target="_blank" rel="noreferrer">
+                            <AiFillGithub className={styles.svg} />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:felicianylandernorman@gmail.com" target="_blank" rel="noreferrer">
+                            <AiFillMail className={styles.svg} />
+                        </a>
+                    </li>
+                </ul>
+                <div className={`${poppins.variable} ${styles.footerText}`}>
+                    <p>&copy; 2024 Felicia Norman. All rights reserved.</p>
+                </div>
+            </footer>
         </section>
     );
 }

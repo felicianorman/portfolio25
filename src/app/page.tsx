@@ -7,6 +7,7 @@ import { MuseoModerno } from "next/font/google";
 import { useEffect } from "react";
 import About from "./pages/about";
 import Contact from "./pages/contact";
+import Footer from "./pages/footer";
 import Projects from "./pages/projects";
 import Navigation from "./ui/navigation";
 

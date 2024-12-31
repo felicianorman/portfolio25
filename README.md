@@ -7,3 +7,4 @@ My portfolio is built with React and Next.js, with CSS modules for styling.
 - clsx
 - react-hook-form
 - nodemailer
+- react-icons
