@@ -13,9 +13,10 @@
     justify-content: space-around;
     list-style-type: none;
 
-     @media screen and (max-width: 1080px) {
-          width: 100%;
-
+     @media screen and (max-width: 768px) {
+       padding: 20px 0 0 0; 
+          gap: 15px;
+          width:fit-content;
         }
     
 }
@@ -40,6 +41,7 @@
     left: 50%;
     background-color: #8f5883;
     transition: width 0.3s ease, left 0.3s ease;
+    cursor: pointer;
 }
 
 .navList li a:hover::before {

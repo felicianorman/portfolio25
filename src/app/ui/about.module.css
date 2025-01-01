@@ -42,7 +42,6 @@
 
       @media screen and (max-width: 1080px) {
            width: 100%;
-           padding: 20px;
         }
 }
 
@@ -54,8 +53,7 @@
     color: #624155;
 
       @media screen and (max-width: 1080px) {
-           font-size: 4em !important;
-           padding: 20px;
+           font-size: 3.5em !important;
         }
 }
 
