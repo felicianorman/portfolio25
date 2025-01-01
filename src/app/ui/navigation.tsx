@@ -1,6 +1,4 @@
 import styles from "@/app/ui/navigation.module.css";
-import $ from "jquery";
-import scrollify from "jquery-scrollify";
 import { Poppins } from "next/font/google";
 import Link from "next/link";
 import { useEffect } from "react";
@@ -14,26 +12,32 @@ const poppins = Poppins({
 });
 
 export default function Navigation() { 
-        useEffect(() => {
-            // Ensure Scrollify is initialized
-            $(function () {
-                scrollify({
-                    section: ".section",
-                    sectionName: "section-name",
-                    scrollSpeed: 1100,
-                    setHeights: false,
-                    updateHash: true,
-                });
-            });
-        }, []);
-    
-    //   scrollify.move("#1");
-    
-        const handleNavigation =
-            (section: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
-                event.preventDefault(); // Prevent default anchor behavior
-                scrollify.move(`#${section}`); // Scrollify moves to the target section
-            };
+  useEffect(() => {
+      if (typeof window !== "undefined") {
+          import("jquery").then(($) => {
+              import("jquery-scrollify").then((scrollify) => {
+                  $.default(function () {
+                      scrollify.default({
+                          section: ".section",
+                          sectionName: "section-name",
+                          scrollSpeed: 1100,
+                          setHeights: false,
+                          updateHash: true,
+                      });
+                  });
+              });
+          });
+      }
+  }, []);
+
+  const handleNavigation = (section: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+      event.preventDefault();
+      if (typeof window !== "undefined") {
+          import("jquery-scrollify").then((scrollify) => {
+              scrollify.default.move(`#${section}`);
+          });
+      }
+  };
 
     
     return (

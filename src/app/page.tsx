@@ -1,8 +1,6 @@
 "use client";
 
 import styles from "@/app/ui/home.module.css";
-import $ from "jquery";
-import scrollify from "jquery-scrollify";
 import { MuseoModerno } from "next/font/google";
 import { useEffect } from "react";
 import About from "./pages/about";
@@ -18,29 +16,24 @@ const museoModerno = MuseoModerno({
 });
 
 export default function Home() {
-    useEffect(() => { 
-        $(function () {
-            scrollify({
-                section: ".section",
-                sectionName: "section-name",
-                interstitialSection: "",
-                easing: "easeOutExpo",
-                scrollSpeed: 1100,
-                offset: 0,
-                scrollbars: true,
-                standardScrollElements: "",
-                setHeights: false,
-                overflowScroll: true,
-                updateHash: true,
-                touchScroll: true,
-                before: function () {},
-                after: function () {},
-                afterResize: function () {},
-                afterRender: function () {}
-            })
-        })
-
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            import("jquery").then(($) => {
+                import("jquery-scrollify").then((scrollify) => {
+                    $.default(function () {
+                        scrollify.default({
+                            section: ".section",
+                            sectionName: "section-name",
+                            scrollSpeed: 1100,
+                            setHeights: false,
+                            updateHash: true,
+                        });
+                    });
+                });
+            });
+        }
     }, []);
+
 
   return (
       <main className={styles.main}>
