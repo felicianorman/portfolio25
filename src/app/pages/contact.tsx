@@ -36,6 +36,7 @@ export default function Contact({ className }: ContactProps) {
      } = useForm<FormData>();
 
     function onSubmit(data: FormData) {
+        console.log(data, 'data');
         sendEmail(data);
     }
 
@@ -57,20 +58,40 @@ export default function Contact({ className }: ContactProps) {
                     <input
                         id="name"
                         type="text"
-                        {...register("name", { required: "Name is required" })}
+                        {...register("name", {
+                            required: true,
+                            minLength: {
+                                value: 2,
+                                message: "Please enter at least 2 characters.",
+                            },
+                         })}
                     />
-                    {errors.name && <span className={styles.error}>{errors.name.message}</span>}{" "}
-                    {/* Display error */}
+                    {errors.name && <p className={styles.error}>{errors.name.message}</p>}
+            
                 </div>
 
                 <div className={styles.contactFormFields}>
                     <label htmlFor="email">Your email</label>
-                    <input id="email" type="email" {...register("email", { required: true })} />
+                    <input id="email" type="email" {...register("email", {
+                        required: true,
+                        pattern: {
+                            value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                            message: "Please enter a valid email address.",
+                        },
+                    })} />
+                    {errors.email && <p className={styles.error}>{errors.email.message}</p>}
                 </div>
 
                 <div className={styles.contactFormFields}>
                     <label htmlFor="message">Message</label>
-                    <textarea id="message" {...register("message", { required: true })} />
+                    <textarea id="message" {...register("message", {
+                        required: true,
+                        minLength: {
+                            value: 10,
+                            message: "Please enter at least 10 characters.",
+                        },
+                    })} />
+                    {errors.message && <p className={styles.error}>{errors.message.message}</p>}
                 </div>
                 <div className={styles.contactFormBtn}>
                     <button type="submit">Submit</button>

@@ -6,12 +6,20 @@ export function sendEmail(data: FormData) {
     fetch(apiEndpoint, {
         method: "POST",
         body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json",
+        },
     })
         .then((res) => res.json())
         .then((response) => {
-            console.log(response);
+            if (response.message === "Email sent!") {
+                alert("Your message has been sent successfully! 🎉");
+            } else {
+                alert("There was an issue sending your message. Please try again.");
+            }
         })
         .catch((err) => {
-            alert(err);
+            alert("An error occurred while sending the email. Please try again.");
+            console.error(err);
         });
 }

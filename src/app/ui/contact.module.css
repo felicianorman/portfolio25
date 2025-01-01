@@ -9,8 +9,8 @@
 
 .error {
     color: red;
-    font-size: 12px;
-    margin-top: 5px;
+    font-size: 0.9em;
+    font-family: var(--font-poppins), sans-serif;
 }
 
 .titles {
