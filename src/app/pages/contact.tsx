@@ -29,6 +29,8 @@ interface ContactProps {
 }
 
 export default function Contact({ className }: ContactProps) {
+    const year = new Date().getFullYear();
+
     const { register, handleSubmit, 
         formState: { errors }
      } = useForm<FormData>();
@@ -101,7 +103,7 @@ export default function Contact({ className }: ContactProps) {
                     </li>
                 </ul>
                 <div className={`${poppins.variable} ${styles.footerText}`}>
-                    <p>&copy; 2024 Felicia Norman. All rights reserved.</p>
+                    <p>&copy; {year} Felicia Norman. All rights reserved.</p>
                 </div>
             </footer>
         </section>
