@@ -27,6 +27,12 @@ export default function Home() {
                             scrollSpeed: 1100,
                             setHeights: false,
                             updateHash: true,
+                            afterResize() {
+                                if (window.innerWidth < 768) {
+                                    scrollify.default.disable();
+                                }
+                            },
+                            
                         });
                     });
                 });
