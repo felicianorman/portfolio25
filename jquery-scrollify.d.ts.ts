@@ -25,6 +25,10 @@ declare module "jquery-scrollify" {
     // eslint-disable-next-line @typescript-eslint/no-namespace
     namespace scrollify {
         function move(target: string): void;
+
+        export function disable() {
+            throw new Error("Function not implemented.");
+        }
     }
 
     export = scrollify;
