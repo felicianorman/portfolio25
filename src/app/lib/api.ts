@@ -11,6 +11,7 @@ export async function fetchRepos(): Promise<Repository[]> {
     try {
         const response = await fetch("https://api.github.com/users/felicianorman/repos");
         const data = await response.json();
+        console.log("Fetched repositories:", data);
         return data;
     } catch (error) { 
         console.error(error);
