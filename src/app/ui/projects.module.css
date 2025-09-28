@@ -66,11 +66,11 @@
 }
 
 .tags {
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: center;
-     margin: 10px 0;
-     gap: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 0;
+    gap: 5px;
 }
 .tag {
     background-color: #624155;
