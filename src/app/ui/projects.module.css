@@ -79,7 +79,6 @@
     border-radius: 5px;
     font-size: 0.8em;
 }
-}
 
 .link a::before {
     content: "";
