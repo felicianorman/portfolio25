@@ -4,7 +4,6 @@ import { MuseoModerno, Poppins } from "next/font/google";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { fetchRepos, Repository } from "../lib/api";
-// import { fetchRepos } from '../lib/api';
 
 const museoModerno = MuseoModerno({
     variable: "--font-museo-moderno",
@@ -26,7 +25,8 @@ const projectImages = {
     gyncancersite: "/gyncancerse.png",
     memorygame: "/memory.png",
     "portfolio25": "/portfolio.png",
-    "Weather-App": "/weather.png"
+    "Weather-App": "/weather.png",
+    "Northborn-site": "/northborn_cover.png",
 };
 
 export default function Projects({ className }: ProjectsProps) {
@@ -36,7 +36,6 @@ export default function Projects({ className }: ProjectsProps) {
         async function loadRepos() {
             try {
                 const data: Repository[] = await fetchRepos();
-                console.log(data, "data");
                 setRepos(data);
             } catch (error) {
                 console.error("Error fetching repositories:", error);

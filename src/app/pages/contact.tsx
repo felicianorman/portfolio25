@@ -102,7 +102,7 @@ export default function Contact({ className }: ContactProps) {
                 <ul>
                     <li>
                         <a
-                            href="https://www.linkedin.com/in/felicia-norman-1b8a15152/"
+                            href="https://www.linkedin.com/in/felicia-norman-larsson-1b8a15152/"
                             target="_blank"
                             rel="noreferrer"
                             title="LinkedIn"
